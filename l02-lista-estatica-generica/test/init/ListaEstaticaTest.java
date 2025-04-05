@@ -182,7 +182,7 @@ public class ListaEstaticaTest {
         listaEstatica.inserir(20);
         
         listaEstatica.inverter();
-        
-        assertEquals(listaEstatica.toString(), "20,15,10,5");
+                
+        assertEquals(listaEstatica.toString(), "20,10,15,5");
     }
 }

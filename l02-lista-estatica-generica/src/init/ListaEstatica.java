@@ -75,23 +75,15 @@ public class ListaEstatica<T>{
     }
     
     public T obterElemento(int index) {
-        T value = null;
-        
-        for (int i = 0; i < info.length; i++) {
-            if (i == index) {
-                value = (T) info[i];
-            }
-        }
-        
-        if (value == null) {
+        if (index < 0 || index >= tamanho) {
             throw new IndexOutOfBoundsException("Posição não encontrada ou não está ocupada");
         }
         
-        return value;
+        return (T) info[index];
     }
     
     public void inverter() {   
-        for (int i = 0; i <= info.length; i++) {  
+        for (int i = 0; i <= (tamanho / 2); i++) {  
             T startValue = obterElemento(i);
             T lastValue = obterElemento((tamanho - 1) - i);
             
