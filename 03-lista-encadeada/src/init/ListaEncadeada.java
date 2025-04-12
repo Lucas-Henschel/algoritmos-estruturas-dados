@@ -88,7 +88,7 @@ public class ListaEncadeada<T> {
     }
     
     public NoLista<T> obterNo(int index) {
-        if (index < 0 || index > obterComprimento()) {
+        if (index < 0 || index >= obterComprimento()) {
             throw new IndexOutOfBoundsException("Posição inválida");
         }
         

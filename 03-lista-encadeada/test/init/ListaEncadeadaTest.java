@@ -90,6 +90,29 @@ public class ListaEncadeadaTest {
     }
     
     @Test
+    public void testObterNo() {
+        ListaEncadeada<String> list = new ListaEncadeada<>();
+        
+        list.inserir("Lucas");
+        list.inserir("Ana");
+        list.inserir("Nicola");
+
+        assertNotNull(list.obterNo(0));
+        assertEquals(list.obterNo(1).getInfo(), "Ana");
+    }
+    
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testObterNoInvalido() {
+        ListaEncadeada<String> list = new ListaEncadeada<>();
+        
+        list.inserir("Lucas");
+        list.inserir("Ana");
+        list.inserir("Nicola");
+
+        list.obterNo(3);
+    }
+    
+    @Test
     public void testRemover() {
         ListaEncadeada<Double> list = new ListaEncadeada<>();
         
