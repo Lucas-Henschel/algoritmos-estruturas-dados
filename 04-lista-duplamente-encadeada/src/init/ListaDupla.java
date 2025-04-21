@@ -131,8 +131,8 @@ public class ListaDupla<T> {
         
         while (current != null) {
             NoListaDupla<T> proximo = current.getProximo();
-            proximo.setAnterior(null);
-            proximo.setProximo(null);
+            current.setAnterior(null);
+            current.setProximo(null);
             
             current = proximo;
         }
